@@ -22,6 +22,7 @@ public class 栈的压入弹出序列 {
 				 popIndex++;
 			 }
 		 }
+		 // 重新获得返回值
 		 return stack.isEmpty();
 		 
 	 }
