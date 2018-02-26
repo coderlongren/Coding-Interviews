@@ -9,6 +9,11 @@ package 剑指offer;
 */
 public class 字符串转换为整数 {
 	 public int StrToInt(String str) {
+		 if (str == null || str.length() == 0) {
+			 // 空字符串
+			 return 0;
+		 }
+		 char[] chars = str.toCharArray();
 		 
 	 }
 	 
