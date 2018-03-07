@@ -1,6 +1,7 @@
-public class 表示数值的字符串 {
+package 剑指offer;
+public class 琛ㄧず鏁板�肩殑瀛楃涓� {
 	public static boolean isNumber(String string) {
-		// 关于正则表达式的应用 
+		// 鍏充簬姝ｅ垯琛ㄨ揪寮忕殑搴旂敤 
 		return string.matches("[\\+-]?[0-9]*(\\.[0-9]*)?([eE][\\+-]?[0-9]+)?");
 	}
 	public static boolean isNumberic(String string) {
@@ -8,7 +9,7 @@ public class 表示数值的字符串 {
 			return false;
 		}
 		char[] s = string.toCharArray();
-		// 如果只有一个数字的的花  那么第一个字符只能0 - 9
+		// 濡傛灉鍙湁涓�涓暟瀛楃殑鐨勮姳  閭ｄ箞绗竴涓瓧绗﹀彧鑳�0 - 9
 		if ((string.length() == 1) && (s[0] < '0' || s[0] > '9')) {
 			return false;
 		}
@@ -18,19 +19,19 @@ public class 表示数值的字符串 {
 			}
 		}
 		else if ((s[0] < '0' || s[0] > '9') && s[0] != '.') {
-			return false; // 第一个字符  既不是正负符号 ,也不是数字 还不是小数点 淡然不符合要求
+			return false; // 绗竴涓瓧绗�  鏃笉鏄璐熺鍙� ,涔熶笉鏄暟瀛� 杩樹笉鏄皬鏁扮偣 娣＄劧涓嶇鍚堣姹�
 		}
 		
-		// 主程序
+		// 涓荤▼搴�
 		int i = 1;
 		
 		while (i < s.length && s[i] >= '0' && s[i] <= '9') {
 			i++;
 		}
-		// 遇到第一个小数点 是允许的
+		// 閬囧埌绗竴涓皬鏁扮偣 鏄厑璁哥殑
 		if (i < s.length && s[i] == '.') {
 			i++;
-			// 往后的数字 也是允许的
+			// 寰�鍚庣殑鏁板瓧 涔熸槸鍏佽鐨�
 			while (i < s.length && s[i] >= '0' && s[i] <= '9') {
 				i++;
 			}
@@ -38,8 +39,8 @@ public class 表示数值的字符串 {
 		
 		if (i < s.length && (s[i] == 'e' || s[i] == 'E')) {
 			i++;
-			// 第一个E e 后面 是可以是   + - 符号的
-			// 如果不是的话  那就必须是 0-9的数字
+			// 绗竴涓狤 e 鍚庨潰 鏄彲浠ユ槸   + - 绗﹀彿鐨�
+			// 濡傛灉涓嶆槸鐨勮瘽  閭ｅ氨蹇呴』鏄� 0-9鐨勬暟瀛�
 			if (i < s.length && (s[i] == '+' || s[i] == '-')) {
 				i++;
 				if (i < s.length && (s[i] >= '0' && s[i] <= '9')) {

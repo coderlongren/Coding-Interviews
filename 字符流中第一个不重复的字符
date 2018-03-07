@@ -6,18 +6,10 @@ import java.util.Map.Entry;
 
 /** 
  * @author coderlong
- * * 请实现一个函数用来找出字符流中第一个只出现一次的字符。
- * 例如，当从字符流中只读出前两个字符”go”时，
- * 第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时
- * ，第一个只出现一次的字符是”l”。
+ * * 
  */
 public class 字符流中第一个不重复的字符 {
 
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//
-//	}
-// 使用HashMap是最简单的方法
 	public static Character getFirstNotChongFu(String s) {
 		Map<Character, Integer> map = new LinkedHashMap<Character,Integer>();
 		
@@ -44,8 +36,6 @@ public class 字符流中第一个不重复的字符 {
 	public static void main(String[] args) {
 		String s = "google";
 		System.out.println(getFirstNotChongFu(s));
-		// 下面这个构造方法，可以简单的实现 FLFO容器
-		// 按照访问顺序 重新排序 key 是LinkHashMap最强大的地方
 		Map<Character, Integer> map = new LinkedHashMap<Character,Integer>(10,0.75f,true);
 		
 		map.put('a',1);
